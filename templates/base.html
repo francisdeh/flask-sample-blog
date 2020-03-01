@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/css/main.css">
-    {% block head %} {% endblock %}
+    <!-- link the static files -->
+{#    <link rel="stylesheet" href="static/css/main.css">#}
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/main.css') }}">
+    {% block title %} {% endblock %}
 </head>
 <body>
 {% block body %}{% endblock %}
