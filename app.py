@@ -71,6 +71,27 @@ def post(id):
     db.session.commit()
     return redirect('/posts')
 
+# Edit a post
+@app.route('/posts/edit/<int:id>', methods=['GET', 'POST'])
+def edit(id):
+    # get the post from the database
+    post = BlogPost.query.get_or_404(id)
+
+    if request.method == 'POST':
+        # get post title
+        post.title = request.form['title']
+        # get post content
+        post.content = request.form['content']
+        # get the author
+        post.author = request.form['author']
+        # add to session
+        db.session.add(post)
+        # save to db
+        db.session.commit()
+        return redirect('/posts')
+    else:
+        return render_template('edit.html', post=post)
+
 @app.route('/home/<string:name>', methods=['GET'])
 def home(name):
     return "hello " + name

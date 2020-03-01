@@ -13,7 +13,7 @@
         <br>
         Post: <textarea name="content"></textarea>
         <br>
-        <input type="submit" value="Post">
+        <input type="submit" value="Save Post">
     </form>
 
     <hr>
@@ -28,5 +28,6 @@
         {% endif %}
         <p>{{ post.content }}</p>
         <a href="/posts/delete/{{  post.id }}">Delete</a>
+        <a href="/posts/edit/{{  post.id }}">Edit</a>
     {% endfor %}
 {% endblock %}
