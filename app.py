@@ -20,7 +20,7 @@ class BlogPost(db.Model):
         return 'Blog post ' + str(self.id)
 
 
-# all posts array
+# dummy posts list
 all_posts = [
     {
         'title': 'Post 1',
@@ -33,7 +33,7 @@ all_posts = [
     }
 ]
 
-
+# Get the home page
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -98,10 +98,6 @@ def edit(id):
         return redirect('/posts')
     else:
         return render_template('edit.html', post=post)
-
-@app.route('/home/<string:name>', methods=['GET'])
-def home(name):
-    return "hello " + name
 
 
 if __name__ == "__main__":

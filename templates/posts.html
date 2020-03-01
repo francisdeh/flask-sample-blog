@@ -1,5 +1,4 @@
 {% extends 'layouts/base.html' %}
-
 {% block body %}
     <div class="row">
         <div class="col-md-8 blog-main">
@@ -8,8 +7,6 @@
             </h3>
         </div>
     </div>
-
-
     {% for post in posts %}
         <div class="blog-post">
             <h2 class="blog-post-title">{{ post.title }}</h2>
@@ -20,5 +17,4 @@
         </div><!-- /.blog-post -->
 
     {% endfor %}
-
 {% endblock %}
