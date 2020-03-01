@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+
+{% block body %}
+    <h2>Add Blog Post</h2>
+    <form action="/posts" method="POST">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <input type="text" name="title" class="form-control" required id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Author</label>
+            <input type="text" name="author" class="form-control" required id="exampleInputPassword1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Content</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" required name="content" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

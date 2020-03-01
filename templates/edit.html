@@ -1,18 +1,20 @@
-{% extends 'base.html' %}
-
-{% block title %}
-    <title>Edit Post</title>
-{% endblock %}
+{% extends 'layouts/base.html' %}
 
 {% block body %}
     <h2>Edit Blog Post</h2>
     <form action="/posts/edit/{{  post.id }}" method="POST">
-        Title: <input type="text" name="title" value="{{  post.title }}" required>
-        <br>
-        Author: <input type="text" name="author" value="{{  post.author }}" required>
-        <br>
-        Post: <textarea name="content">{{  post.content }}</textarea>
-        <br>
-        <input type="submit" value="Update Post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <input type="text" name="title" class="form-control" value="{{  post.title }}" required id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Author</label>
+            <input type="text" name="author" class="form-control" name="author" value="{{  post.author }}" required id="exampleInputPassword1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Content</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="content" required rows="3">{{  post.content }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 {% endblock %}

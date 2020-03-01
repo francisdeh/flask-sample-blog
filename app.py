@@ -60,6 +60,13 @@ def posts():
         all_posts = BlogPost.query.order_by(BlogPost.created_at).all()
     return render_template('posts.html', posts=all_posts)
 
+
+# shows page for creating post
+@app.route('/posts/create')
+def create():
+    return render_template('create.html')
+
+
 # Delete a post
 @app.route('/posts/delete/<int:id>')
 def post(id):
