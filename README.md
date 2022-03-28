@@ -1,4 +1,4 @@
-# Sample CRUD blog with flutter
+# Sample CRUD blog with flask
 > Project uses __pipenv__ to manage dependencies and virtual environment. https://pipenv-fork.readthedocs.io/en/latest/basics.html
 > -  No authentication system.
 > - No commenting system
